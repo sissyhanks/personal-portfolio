@@ -12,6 +12,56 @@ body {
   line-height: 1.5;
 }
 
+/* header */
+h1 {
+  font-size: 2.25rem;
+  text-shadow: var(--glow) 0.5px 0.5px 5px;
+  padding: 1rem 0 1rem 0;
+}
+
+/* subhead */
+h2 {
+  font-size: 1.75rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--glow);
+  text-shadow: var(--lightest) 1px 1px 15px;
+}
+
+/* about header */
+h3 {
+  font-size: 1.75rem;
+}
+
+/* portfolio headers */
+h4 {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 2px var(--darkest), 0 0 1em var(--darkest),
+    0 0 0.2em var(--darkest);
+}
+
+/* headers unassigned at this time
+
+h5 {
+}
+
+h6 {
+} */
+
+/* styles nav and footer */
+a {
+  text-decoration: none;
+  color: var(--lightest);
+}
+
+/* styles contact info */
+th,
+td {
+  font-size: 1.25em;
+  padding: 0.25em 0.5em 0em 0.5em;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -34,61 +84,8 @@ nav {
   z-index: 10;
 }
 
-.main {
-  margin: 0 1rem;
-}
-
-h1 {
-  font-size: 2.25rem;
-  text-shadow: var(--glow) 0.5px 0.5px 5px;
-  padding: 1rem 0 1rem 0;
-}
-
-h2 {
-  font-size: 1.75rem;
-  font-weight: lighter;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--glow);
-  text-shadow: var(--lightest) 1px 1px 15px;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-  text-shadow: 1px 1px 2px var(--darkest), 0 0 1em var(--darkest),
-    0 0 0.2em var(--darkest);
-}
-
-h5 {
-}
-
-h6 {
-}
-
-a {
-  text-decoration: none;
-  color: var(--lightest);
-}
-
 .profile {
   margin: 0 auto;
-}
-
-.aside {
-  width: 90%;
-  margin: auto 2em auto;
-}
-
-.anchor {
-  scroll-margin-top: 6.5em;
-}
-
-#right-column {
-  width: 100%;
 }
 
 .profile-pic {
@@ -107,18 +104,26 @@ a {
   font-size: 1rem;
 }
 
-.bio {
+/* gives buffer when linked items jump to top of page so they aren't hidden by header */
+.anchor {
+  scroll-margin-top: 6.5em;
 }
 
-#portfolio {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+/* styles bio section */
+.aside {
+  width: 90%;
+  margin: auto 2em auto;
 }
 
+/* .bio {
+} */
+
+/* styles portfolio */
+.main {
+  margin: 0 1rem;
+}
+
+/* styles featured project */
 .featured-project-column {
   width: 100%;
   display: flex;
@@ -152,6 +157,7 @@ a {
   max-width: 100%;
 }
 
+/* styles other projects */
 .project-card {
   width: 90%;
   margin: 3%;
@@ -174,6 +180,7 @@ a {
   width: 100%;
 }
 
+/* styles contact */
 .contact {
   border-top: 0.25em solid var(--glow);
   display: flex;
@@ -184,12 +191,7 @@ a {
   text-align: left;
 }
 
-th,
-td {
-  font-size: 1.25em;
-  padding: 0.25em 0.5em 0em 0.5em;
-}
-
+/* styles footer */
 .footer-list {
   position: absolute;
   width: 100%;
@@ -209,6 +211,19 @@ td {
   text-shadow: var(--lightest) 1px 1px 5px;
 }
 
+#right-column {
+  width: 100%;
+}
+
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
 /* tablet --- tablet --- tablet
 tablet --- tablet --- tablet
 tablet --- tablet --- tablet
@@ -221,10 +236,12 @@ tablet --- tablet --- tablet
 tablet --- tablet --- tablet */
 
 @media screen and (min-width: 768px) {
+  /* prevents profile pic from growing on tablet */
   .profile-pic {
     max-width: 581px;
   }
 
+  /* initiates wrap on other project cards */
   .project-list-column {
     display: flex;
     flex-direction: row;
@@ -264,11 +281,23 @@ full screen --- full screen --- full screen */
     background: linear-gradient(var(--darkest), 98%, transparent);
   }
 
-  h3 {
+  nav {
+    width: 33%;
+    height: 10rem;
+    padding-top: 2rem;
+    position: sticky;
+    top: 13.75rem;
   }
 
   a:hover {
     text-shadow: var(--glow) 0.5px 0.5px 5px;
+  }
+
+  /* contact list */
+  th,
+  td {
+    font-size: 1.25em;
+    padding: 0.25em 0.5em 0em 0.5em;
   }
 
   .profile {
@@ -280,14 +309,6 @@ full screen --- full screen --- full screen */
     width: 100%;
   }
 
-  nav {
-    width: 33%;
-    height: 10rem;
-    padding-top: 2rem;
-    position: sticky;
-    top: 13.75rem;
-  }
-
   .nav-item {
     display: block;
   }
@@ -295,19 +316,6 @@ full screen --- full screen --- full screen */
   .aside {
     max-width: 600em;
     padding: 30% 10% 10% 10%;
-  }
-
-  #right-column {
-    width: 66%;
-    margin-left: 34%;
-  }
-
-  .main {
-  }
-  #portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
   }
 
   .featured-project-header {
@@ -329,9 +337,14 @@ full screen --- full screen --- full screen */
     text-align: left;
   }
 
-  th,
-  td {
-    font-size: 1.25em;
-    padding: 0.25em 0.5em 0em 0.5em;
+  #right-column {
+    width: 66%;
+    margin-left: 34%;
+  }
+
+  #portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
 }
